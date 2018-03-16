@@ -5,8 +5,8 @@ module ActiveAdmin
     has_many :permissions, dependent: :destroy
 
     with_options presence: true do
-      validates :class_name
-      validates :action
+      validate :class_name
+      validate :action
     end
 
     def const

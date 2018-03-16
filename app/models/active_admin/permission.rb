@@ -14,9 +14,9 @@ module ActiveAdmin
     after_update :clear_cache
 
     with_options presence: true do
-      validates :managed_resource_id
-      validates :role
-      validates :state
+      validate :managed_resource_id
+      validate :role
+      validate :state
     end
 
     validates :managed_resource_id, uniqueness: { scope: [:role] }
